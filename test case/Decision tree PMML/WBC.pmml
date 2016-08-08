@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PMML version="4.2" xmlns="http://www.dmg.org/PMML-4_2">
+  <Header copyright="edris">
+    <Application name="KNIME" version="3.1.2"/>
+  </Header>
+  <DataDictionary numberOfFields="10">
+    <DataField name="Clump Thickness" optype="continuous" dataType="double">
+      <Interval closure="closedClosed" leftMargin="1.0" rightMargin="10.0"/>
+    </DataField>
+    <DataField name="Uniformity of Cell Size" optype="continuous" dataType="double">
+      <Interval closure="closedClosed" leftMargin="1.0" rightMargin="10.0"/>
+    </DataField>
+    <DataField name="Uniformity of Cell Shape" optype="continuous" dataType="double">
+      <Interval closure="closedClosed" leftMargin="1.0" rightMargin="10.0"/>
+    </DataField>
+    <DataField name="Marginal Adhesion" optype="continuous" dataType="double">
+      <Interval closure="closedClosed" leftMargin="1.0" rightMargin="10.0"/>
+    </DataField>
+    <DataField name="Single Epithelial Cell Size" optype="continuous" dataType="double">
+      <Interval closure="closedClosed" leftMargin="1.0" rightMargin="10.0"/>
+    </DataField>
+    <DataField name="Bare Nuclei" optype="continuous" dataType="double">
+      <Interval closure="closedClosed" leftMargin="1.0" rightMargin="10.0"/>
+    </DataField>
+    <DataField name="Bland Chromatin" optype="continuous" dataType="double">
+      <Interval closure="closedClosed" leftMargin="1.0" rightMargin="10.0"/>
+    </DataField>
+    <DataField name="Normal Nucleoli" optype="continuous" dataType="double">
+      <Interval closure="closedClosed" leftMargin="1.0" rightMargin="10.0"/>
+    </DataField>
+    <DataField name="Mitoses" optype="continuous" dataType="double">
+      <Interval closure="closedClosed" leftMargin="1.0" rightMargin="10.0"/>
+    </DataField>
+    <DataField name="class" optype="categorical" dataType="string">
+      <Value value="2"/>
+      <Value value="4"/>
+    </DataField>
+  </DataDictionary>
+  <TreeModel modelName="DecisionTree" functionName="classification" splitCharacteristic="binarySplit" missingValueStrategy="lastPrediction" noTrueChildStrategy="returnNullPrediction">
+    <MiningSchema>
+      <MiningField name="Clump Thickness" invalidValueTreatment="asIs"/>
+      <MiningField name="Uniformity of Cell Size" invalidValueTreatment="asIs"/>
+      <MiningField name="Uniformity of Cell Shape" invalidValueTreatment="asIs"/>
+      <MiningField name="Marginal Adhesion" invalidValueTreatment="asIs"/>
+      <MiningField name="Single Epithelial Cell Size" invalidValueTreatment="asIs"/>
+      <MiningField name="Bare Nuclei" invalidValueTreatment="asIs"/>
+      <MiningField name="Bland Chromatin" invalidValueTreatment="asIs"/>
+      <MiningField name="Normal Nucleoli" invalidValueTreatment="asIs"/>
+      <MiningField name="Mitoses" invalidValueTreatment="asIs"/>
+      <MiningField name="class" invalidValueTreatment="asIs" usageType="target"/>
+    </MiningSchema>
+    <Node id="0" score="2" recordCount="419.0">
+      <True/>
+      <ScoreDistribution value="2" recordCount="278.0"/>
+      <ScoreDistribution value="4" recordCount="141.0"/>
+      <Node id="1" score="2" recordCount="285.0">
+        <SimplePredicate field="Bare Nuclei" operator="lessOrEqual" value="3.772327964860908"/>
+        <ScoreDistribution value="2" recordCount="264.0"/>
+        <ScoreDistribution value="4" recordCount="21.0"/>
+        <Node id="2" score="2" recordCount="263.0">
+          <SimplePredicate field="Uniformity of Cell Size" operator="lessOrEqual" value="3.5"/>
+          <ScoreDistribution value="2" recordCount="259.0"/>
+          <ScoreDistribution value="4" recordCount="4.0"/>
+        </Node>
+        <Node id="7" score="4" recordCount="22.0">
+          <SimplePredicate field="Uniformity of Cell Size" operator="greaterThan" value="3.5"/>
+          <ScoreDistribution value="2" recordCount="5.0"/>
+          <ScoreDistribution value="4" recordCount="17.0"/>
+        </Node>
+      </Node>
+      <Node id="10" score="4" recordCount="134.0">
+        <SimplePredicate field="Bare Nuclei" operator="greaterThan" value="3.772327964860908"/>
+        <ScoreDistribution value="2" recordCount="14.0"/>
+        <ScoreDistribution value="4" recordCount="120.0"/>
+      </Node>
+    </Node>
+  </TreeModel>
+</PMML>

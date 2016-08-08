@@ -1,0 +1,1259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PMML version="4.2" xmlns="http://www.dmg.org/PMML-4_2">
+  <Header copyright="edris">
+    <Application name="KNIME" version="3.1.2"/>
+  </Header>
+  <DataDictionary numberOfFields="15">
+    <DataField name="age" optype="continuous" dataType="double">
+      <Interval closure="closedClosed" leftMargin="17.0" rightMargin="90.0"/>
+    </DataField>
+    <DataField name="workclass" optype="categorical" dataType="string">
+      <Value value="State-gov"/>
+      <Value value="Self-emp-not-inc"/>
+      <Value value="Private"/>
+      <Value value="Federal-gov"/>
+      <Value value="Local-gov"/>
+      <Value value="Self-emp-inc"/>
+      <Value value="Without-pay"/>
+      <Value value="Never-worked"/>
+    </DataField>
+    <DataField name="fnlwgt" optype="continuous" dataType="double">
+      <Interval closure="closedClosed" leftMargin="12285.0" rightMargin="1484705.0"/>
+    </DataField>
+    <DataField name="education" optype="categorical" dataType="string">
+      <Value value="Bachelors"/>
+      <Value value="HS-grad"/>
+      <Value value="11th"/>
+      <Value value="Masters"/>
+      <Value value="9th"/>
+      <Value value="Some-college"/>
+      <Value value="Assoc-acdm"/>
+      <Value value="Assoc-voc"/>
+      <Value value="7th-8th"/>
+      <Value value="Doctorate"/>
+      <Value value="Prof-school"/>
+      <Value value="5th-6th"/>
+      <Value value="10th"/>
+      <Value value="1st-4th"/>
+      <Value value="Preschool"/>
+      <Value value="12th"/>
+    </DataField>
+    <DataField name="education-num" optype="continuous" dataType="double">
+      <Interval closure="closedClosed" leftMargin="1.0" rightMargin="16.0"/>
+    </DataField>
+    <DataField name="marital-status" optype="categorical" dataType="string">
+      <Value value="Never-married"/>
+      <Value value="Married-civ-spouse"/>
+      <Value value="Divorced"/>
+      <Value value="Married-spouse-absent"/>
+      <Value value="Separated"/>
+      <Value value="Married-AF-spouse"/>
+      <Value value="Widowed"/>
+    </DataField>
+    <DataField name="occupation" optype="categorical" dataType="string">
+      <Value value="Adm-clerical"/>
+      <Value value="Exec-managerial"/>
+      <Value value="Handlers-cleaners"/>
+      <Value value="Prof-specialty"/>
+      <Value value="Other-service"/>
+      <Value value="Sales"/>
+      <Value value="Craft-repair"/>
+      <Value value="Transport-moving"/>
+      <Value value="Farming-fishing"/>
+      <Value value="Machine-op-inspct"/>
+      <Value value="Tech-support"/>
+      <Value value="Protective-serv"/>
+      <Value value="Armed-Forces"/>
+      <Value value="Priv-house-serv"/>
+    </DataField>
+    <DataField name="relationship" optype="categorical" dataType="string">
+      <Value value="Not-in-family"/>
+      <Value value="Husband"/>
+      <Value value="Wife"/>
+      <Value value="Own-child"/>
+      <Value value="Unmarried"/>
+      <Value value="Other-relative"/>
+    </DataField>
+    <DataField name="race" optype="categorical" dataType="string">
+      <Value value="White"/>
+      <Value value="Black"/>
+      <Value value="Asian-Pac-Islander"/>
+      <Value value="Amer-Indian-Eskimo"/>
+      <Value value="Other"/>
+    </DataField>
+    <DataField name="sex" optype="categorical" dataType="string">
+      <Value value="Male"/>
+      <Value value="Female"/>
+    </DataField>
+    <DataField name="capital-gain" optype="continuous" dataType="double">
+      <Interval closure="closedClosed" leftMargin="0.0" rightMargin="99999.0"/>
+    </DataField>
+    <DataField name="capital-loss" optype="continuous" dataType="double">
+      <Interval closure="closedClosed" leftMargin="0.0" rightMargin="4356.0"/>
+    </DataField>
+    <DataField name="hours-per-week" optype="continuous" dataType="double">
+      <Interval closure="closedClosed" leftMargin="1.0" rightMargin="99.0"/>
+    </DataField>
+    <DataField name="native-country" optype="categorical" dataType="string">
+      <Value value="United-States"/>
+      <Value value="Cuba"/>
+      <Value value="Jamaica"/>
+      <Value value="India"/>
+      <Value value="Mexico"/>
+      <Value value="South"/>
+      <Value value="Puerto-Rico"/>
+      <Value value="Honduras"/>
+      <Value value="England"/>
+      <Value value="Canada"/>
+      <Value value="Germany"/>
+      <Value value="Iran"/>
+      <Value value="Philippines"/>
+      <Value value="Italy"/>
+      <Value value="Poland"/>
+      <Value value="Columbia"/>
+      <Value value="Cambodia"/>
+      <Value value="Thailand"/>
+      <Value value="Ecuador"/>
+      <Value value="Laos"/>
+      <Value value="Taiwan"/>
+      <Value value="Haiti"/>
+      <Value value="Portugal"/>
+      <Value value="Dominican-Republic"/>
+      <Value value="El-Salvador"/>
+      <Value value="France"/>
+      <Value value="Guatemala"/>
+      <Value value="China"/>
+      <Value value="Japan"/>
+      <Value value="Yugoslavia"/>
+      <Value value="Peru"/>
+      <Value value="Outlying-US(Guam-USVI-etc)"/>
+      <Value value="Scotland"/>
+      <Value value="Trinadad&amp;Tobago"/>
+      <Value value="Greece"/>
+      <Value value="Nicaragua"/>
+      <Value value="Vietnam"/>
+      <Value value="Hong"/>
+      <Value value="Ireland"/>
+      <Value value="Hungary"/>
+      <Value value="Holand-Netherlands"/>
+    </DataField>
+    <DataField name="income" optype="categorical" dataType="string">
+      <Value value="&lt;=50K"/>
+      <Value value=">50K"/>
+    </DataField>
+  </DataDictionary>
+  <TreeModel modelName="DecisionTree" functionName="classification" splitCharacteristic="multiSplit" missingValueStrategy="lastPrediction" noTrueChildStrategy="returnNullPrediction">
+    <MiningSchema>
+      <MiningField name="age" invalidValueTreatment="asIs"/>
+      <MiningField name="workclass" invalidValueTreatment="asIs"/>
+      <MiningField name="fnlwgt" invalidValueTreatment="asIs"/>
+      <MiningField name="education" invalidValueTreatment="asIs"/>
+      <MiningField name="education-num" invalidValueTreatment="asIs"/>
+      <MiningField name="marital-status" invalidValueTreatment="asIs"/>
+      <MiningField name="occupation" invalidValueTreatment="asIs"/>
+      <MiningField name="relationship" invalidValueTreatment="asIs"/>
+      <MiningField name="race" invalidValueTreatment="asIs"/>
+      <MiningField name="sex" invalidValueTreatment="asIs"/>
+      <MiningField name="capital-gain" invalidValueTreatment="asIs"/>
+      <MiningField name="capital-loss" invalidValueTreatment="asIs"/>
+      <MiningField name="hours-per-week" invalidValueTreatment="asIs"/>
+      <MiningField name="native-country" invalidValueTreatment="asIs"/>
+      <MiningField name="income" invalidValueTreatment="asIs" usageType="target"/>
+    </MiningSchema>
+    <Node id="0" score="&lt;=50K" recordCount="19536.0">
+      <True/>
+      <ScoreDistribution value="&lt;=50K" recordCount="14815.0"/>
+      <ScoreDistribution value=">50K" recordCount="4721.0"/>
+      <Node id="1" score="&lt;=50K" recordCount="4988.0">
+        <SimplePredicate field="relationship" operator="equal" value="Not-in-family"/>
+        <ScoreDistribution value="&lt;=50K" recordCount="4455.0"/>
+        <ScoreDistribution value=">50K" recordCount="533.0"/>
+        <Node id="42" score="&lt;=50K" recordCount="4845.0">
+          <SimplePredicate field="capital-gain" operator="lessOrEqual" value="8296.0"/>
+          <ScoreDistribution value="&lt;=50K" recordCount="4454.0"/>
+          <ScoreDistribution value=">50K" recordCount="391.0"/>
+        </Node>
+        <Node id="1685" score=">50K" recordCount="143.0">
+          <SimplePredicate field="capital-gain" operator="greaterThan" value="8296.0"/>
+          <ScoreDistribution value="&lt;=50K" recordCount="1.0"/>
+          <ScoreDistribution value=">50K" recordCount="142.0"/>
+        </Node>
+      </Node>
+      <Node id="2" score="&lt;=50K" recordCount="7928.0">
+        <SimplePredicate field="relationship" operator="equal" value="Husband"/>
+        <ScoreDistribution value="&lt;=50K" recordCount="4364.0"/>
+        <ScoreDistribution value=">50K" recordCount="3564.0"/>
+        <Node id="267" score=">50K" recordCount="1456.0">
+          <SimplePredicate field="education" operator="equal" value="Bachelors"/>
+          <ScoreDistribution value="&lt;=50K" recordCount="477.0"/>
+          <ScoreDistribution value=">50K" recordCount="979.0"/>
+          <Node id="268" score=">50K" recordCount="1260.0">
+            <SimplePredicate field="capital-gain" operator="lessOrEqual" value="5095.5"/>
+            <ScoreDistribution value="&lt;=50K" recordCount="475.0"/>
+            <ScoreDistribution value=">50K" recordCount="785.0"/>
+            <Node id="269" score=">50K" recordCount="64.0">
+              <SimplePredicate field="occupation" operator="equal" value="Adm-clerical"/>
+              <ScoreDistribution value="&lt;=50K" recordCount="27.0"/>
+              <ScoreDistribution value=">50K" recordCount="37.0"/>
+              <Node id="270" score="&lt;=50K" recordCount="17.0">
+                <SimplePredicate field="age" operator="lessOrEqual" value="34.5"/>
+                <ScoreDistribution value="&lt;=50K" recordCount="11.0"/>
+                <ScoreDistribution value=">50K" recordCount="6.0"/>
+              </Node>
+              <Node id="271" score=">50K" recordCount="47.0">
+                <SimplePredicate field="age" operator="greaterThan" value="34.5"/>
+                <ScoreDistribution value="&lt;=50K" recordCount="16.0"/>
+                <ScoreDistribution value=">50K" recordCount="31.0"/>
+              </Node>
+            </Node>
+            <Node id="279" score=">50K" recordCount="371.0">
+              <SimplePredicate field="occupation" operator="equal" value="Exec-managerial"/>
+              <ScoreDistribution value="&lt;=50K" recordCount="95.0"/>
+              <ScoreDistribution value=">50K" recordCount="276.0"/>
+            </Node>
+            <Node id="365" score="&lt;=50K" recordCount="12.0">
+              <SimplePredicate field="occupation" operator="equal" value="Handlers-cleaners"/>
+              <ScoreDistribution value="&lt;=50K" recordCount="8.0"/>
+              <ScoreDistribution value=">50K" recordCount="4.0"/>
+            </Node>
+            <Node id="366" score=">50K" recordCount="361.0">
+              <SimplePredicate field="occupation" operator="equal" value="Prof-specialty"/>
+              <ScoreDistribution value="&lt;=50K" recordCount="142.0"/>
+              <ScoreDistribution value=">50K" recordCount="219.0"/>
+              <Node id="367" score="&lt;=50K" recordCount="45.0">
+                <SimplePredicate field="hours-per-week" operator="lessOrEqual" value="37.5"/>
+                <ScoreDistribution value="&lt;=50K" recordCount="32.0"/>
+                <ScoreDistribution value=">50K" recordCount="13.0"/>
+              </Node>
+              <Node id="375" score=">50K" recordCount="316.0">
+                <SimplePredicate field="hours-per-week" operator="greaterThan" value="37.5"/>
+                <ScoreDistribution value="&lt;=50K" recordCount="110.0"/>
+                <ScoreDistribution value=">50K" recordCount="206.0"/>
+                <Node id="383" score="&lt;=50K" recordCount="18.0">
+                  <SimplePredicate field="age" operator="lessOrEqual" value="27.5"/>
+                  <ScoreDistribution value="&lt;=50K" recordCount="14.0"/>
+                  <ScoreDistribution value=">50K" recordCount="4.0"/>
+                </Node>
+                <Node id="384" score=">50K" recordCount="298.0">
+                  <SimplePredicate field="age" operator="greaterThan" value="27.5"/>
+                  <ScoreDistribution value="&lt;=50K" recordCount="96.0"/>
+                  <ScoreDistribution value=">50K" recordCount="202.0"/>
+                </Node>
+              </Node>
+            </Node>
+            <Node id="519" score=">50K" recordCount="67.0">
+              <SimplePredicate field="occupation" operator="equal" value="Craft-repair"/>
+              <ScoreDistribution value="&lt;=50K" recordCount="28.0"/>
+              <ScoreDistribution value=">50K" recordCount="39.0"/>
+            </Node>
+            <Node id="534" score="&lt;=50K" recordCount="32.0">
+              <SimplePredicate field="occupation" operator="equal" value="Farming-fishing"/>
+              <ScoreDistribution value="&lt;=50K" recordCount="23.0"/>
+              <ScoreDistribution value=">50K" recordCount="9.0"/>
+            </Node>
+            <Node id="540" score="&lt;=50K" recordCount="22.0">
+              <SimplePredicate field="occupation" operator="equal" value="Machine-op-inspct"/>
+              <ScoreDistribution value="&lt;=50K" recordCount="14.0"/>
+              <ScoreDistribution value=">50K" recordCount="8.0"/>
+            </Node>
+            <Node id="543" score=">50K" recordCount="212.0">
+              <SimplePredicate field="occupation" operator="equal" value="Sales"/>
+              <ScoreDistribution value="&lt;=50K" recordCount="77.0"/>
+              <ScoreDistribution value=">50K" recordCount="135.0"/>
+            </Node>
+            <Node id="587" score="&lt;=50K" recordCount="23.0">
+              <SimplePredicate field="occupation" operator="equal" value="Other-service"/>
+              <ScoreDistribution value="&lt;=50K" recordCount="17.0"/>
+              <ScoreDistribution value=">50K" recordCount="6.0"/>
+            </Node>
+            <Node id="590" score="&lt;=50K" recordCount="23.0">
+              <SimplePredicate field="occupation" operator="equal" value="Transport-moving"/>
+              <ScoreDistribution value="&lt;=50K" recordCount="17.0"/>
+              <ScoreDistribution value=">50K" recordCount="6.0"/>
+            </Node>
+            <Node id="593" score=">50K" recordCount="37.0">
+              <SimplePredicate field="occupation" operator="equal" value="Tech-support"/>
+              <ScoreDistribution value="&lt;=50K" recordCount="13.0"/>
+              <ScoreDistribution value=">50K" recordCount="24.0"/>
+            </Node>
+            <Node id="599" score=">50K" recordCount="36.0">
+              <SimplePredicate field="occupation" operator="equal" value="Protective-serv"/>
+              <ScoreDistribution value="&lt;=50K" recordCount="14.0"/>
+              <ScoreDistribution value=">50K" recordCount="22.0"/>
+              <Node id="600" score="&lt;=50K" recordCount="10.0">
+                <SimplePredicate field="fnlwgt" operator="lessOrEqual" value="161061.0"/>
+                <ScoreDistribution value="&lt;=50K" recordCount="7.0"/>
+                <ScoreDistribution value=">50K" recordCount="3.0"/>
+              </Node>
+              <Node id="601" score=">50K" recordCount="26.0">
+                <SimplePredicate field="fnlwgt" operator="greaterThan" value="161061.0"/>
+                <ScoreDistribution value="&lt;=50K" recordCount="7.0"/>
+                <ScoreDistribution value=">50K" recordCount="19.0"/>
+              </Node>
+            </Node>
+            <Node id="604" score="&lt;=50K" recordCount="0.0">
+              <SimplePredicate field="occupation" operator="equal" value="Priv-house-serv"/>
+              <ScoreDistribution value="&lt;=50K" recordCount="0.0"/>
+              <ScoreDistribution value=">50K" recordCount="0.0"/>
+            </Node>
+            <Node id="605" score="&lt;=50K" recordCount="0.0">
+              <SimplePredicate field="occupation" operator="equal" value="Armed-Forces"/>
+              <ScoreDistribution value="&lt;=50K" recordCount="0.0"/>
+              <ScoreDistribution value=">50K" recordCount="0.0"/>
+            </Node>
+          </Node>
+          <Node id="606" score=">50K" recordCount="196.0">
+            <SimplePredicate field="capital-gain" operator="greaterThan" value="5095.5"/>
+            <ScoreDistribution value="&lt;=50K" recordCount="2.0"/>
+            <ScoreDistribution value=">50K" recordCount="194.0"/>
+          </Node>
+        </Node>
+        <Node id="266" score="&lt;=50K" recordCount="2579.0">
+          <SimplePredicate field="education" operator="equal" value="HS-grad"/>
+          <ScoreDistribution value="&lt;=50K" recordCount="1767.0"/>
+          <ScoreDistribution value=">50K" recordCount="812.0"/>
+          <Node id="276" score="&lt;=50K" recordCount="2466.0">
+            <SimplePredicate field="capital-gain" operator="lessOrEqual" value="5095.5"/>
+            <ScoreDistribution value="&lt;=50K" recordCount="1763.0"/>
+            <ScoreDistribution value=">50K" recordCount="703.0"/>
+            <Node id="395" score="&lt;=50K" recordCount="2362.0">
+              <SimplePredicate field="capital-loss" operator="lessOrEqual" value="1782.5"/>
+              <ScoreDistribution value="&lt;=50K" recordCount="1728.0"/>
+              <ScoreDistribution value=">50K" recordCount="634.0"/>
+            </Node>
+            <Node id="1723" score=">50K" recordCount="104.0">
+              <SimplePredicate field="capital-loss" operator="greaterThan" value="1782.5"/>
+              <ScoreDistribution value="&lt;=50K" recordCount="35.0"/>
+              <ScoreDistribution value=">50K" recordCount="69.0"/>
+              <Node id="1724" score=">50K" recordCount="71.0">
+                <SimplePredicate field="capital-loss" operator="lessOrEqual" value="1989.5"/>
+                <ScoreDistribution value="&lt;=50K" recordCount="5.0"/>
+                <ScoreDistribution value=">50K" recordCount="66.0"/>
+              </Node>
+              <Node id="1739" score="&lt;=50K" recordCount="33.0">
+                <SimplePredicate field="capital-loss" operator="greaterThan" value="1989.5"/>
+                <ScoreDistribution value="&lt;=50K" recordCount="30.0"/>
+                <ScoreDistribution value=">50K" recordCount="3.0"/>
+              </Node>
+            </Node>
+          </Node>
+          <Node id="1742" score=">50K" recordCount="113.0">
+            <SimplePredicate field="capital-gain" operator="greaterThan" value="5095.5"/>
+            <ScoreDistribution value="&lt;=50K" recordCount="4.0"/>
+            <ScoreDistribution value=">50K" recordCount="109.0"/>
+          </Node>
+        </Node>
+        <Node id="1745" score=">50K" recordCount="526.0">
+          <SimplePredicate field="education" operator="equal" value="Masters"/>
+          <ScoreDistribution value="&lt;=50K" recordCount="109.0"/>
+          <ScoreDistribution value=">50K" recordCount="417.0"/>
+        </Node>
+        <Node id="1815" score="&lt;=50K" recordCount="358.0">
+          <SimplePredicate field="education" operator="equal" value="Assoc-voc"/>
+          <ScoreDistribution value="&lt;=50K" recordCount="191.0"/>
+          <ScoreDistribution value=">50K" recordCount="167.0"/>
+          <Node id="1816" score="&lt;=50K" recordCount="335.0">
+            <SimplePredicate field="capital-gain" operator="lessOrEqual" value="7032.5"/>
+            <ScoreDistribution value="&lt;=50K" recordCount="191.0"/>
+            <ScoreDistribution value=">50K" recordCount="144.0"/>
+            <Node id="1817" score="&lt;=50K" recordCount="16.0">
+              <SimplePredicate field="occupation" operator="equal" value="Adm-clerical"/>
+              <ScoreDistribution value="&lt;=50K" recordCount="14.0"/>
+              <ScoreDistribution value=">50K" recordCount="2.0"/>
+            </Node>
+            <Node id="1818" score=">50K" recordCount="48.0">
+              <SimplePredicate field="occupation" operator="equal" value="Exec-managerial"/>
+              <ScoreDistribution value="&lt;=50K" recordCount="17.0"/>
+              <ScoreDistribution value=">50K" recordCount="31.0"/>
+            </Node>
+            <Node id="1825" score="&lt;=50K" recordCount="10.0">
+              <SimplePredicate field="occupation" operator="equal" value="Handlers-cleaners"/>
+              <ScoreDistribution value="&lt;=50K" recordCount="8.0"/>
+              <ScoreDistribution value=">50K" recordCount="2.0"/>
+            </Node>
+            <Node id="1826" score=">50K" recordCount="32.0">
+              <SimplePredicate field="occupation" operator="equal" value="Prof-specialty"/>
+              <ScoreDistribution value="&lt;=50K" recordCount="15.0"/>
+              <ScoreDistribution value=">50K" recordCount="17.0"/>
+            </Node>
+            <Node id="1829" score="&lt;=50K" recordCount="102.0">
+              <SimplePredicate field="occupation" operator="equal" value="Craft-repair"/>
+              <ScoreDistribution value="&lt;=50K" recordCount="60.0"/>
+              <ScoreDistribution value=">50K" recordCount="42.0"/>
+            </Node>
+            <Node id="1846" score="&lt;=50K" recordCount="23.0">
+              <SimplePredicate field="occupation" operator="equal" value="Farming-fishing"/>
+              <ScoreDistribution value="&lt;=50K" recordCount="16.0"/>
+              <ScoreDistribution value=">50K" recordCount="7.0"/>
+            </Node>
+            <Node id="1849" score="&lt;=50K" recordCount="13.0">
+              <SimplePredicate field="occupation" operator="equal" value="Machine-op-inspct"/>
+              <ScoreDistribution value="&lt;=50K" recordCount="10.0"/>
+              <ScoreDistribution value=">50K" recordCount="3.0"/>
+            </Node>
+            <Node id="1850" score="&lt;=50K" recordCount="28.0">
+              <SimplePredicate field="occupation" operator="equal" value="Sales"/>
+              <ScoreDistribution value="&lt;=50K" recordCount="16.0"/>
+              <ScoreDistribution value=">50K" recordCount="12.0"/>
+              <Node id="1851" score="&lt;=50K" recordCount="18.0">
+                <SimplePredicate field="age" operator="lessOrEqual" value="39.5"/>
+                <ScoreDistribution value="&lt;=50K" recordCount="13.0"/>
+                <ScoreDistribution value=">50K" recordCount="5.0"/>
+              </Node>
+              <Node id="1852" score=">50K" recordCount="10.0">
+                <SimplePredicate field="age" operator="greaterThan" value="39.5"/>
+                <ScoreDistribution value="&lt;=50K" recordCount="3.0"/>
+                <ScoreDistribution value=">50K" recordCount="7.0"/>
+              </Node>
+            </Node>
+            <Node id="1853" score="&lt;=50K" recordCount="12.0">
+              <SimplePredicate field="occupation" operator="equal" value="Other-service"/>
+              <ScoreDistribution value="&lt;=50K" recordCount="9.0"/>
+              <ScoreDistribution value=">50K" recordCount="3.0"/>
+            </Node>
+            <Node id="1854" score="&lt;=50K" recordCount="12.0">
+              <SimplePredicate field="occupation" operator="equal" value="Transport-moving"/>
+              <ScoreDistribution value="&lt;=50K" recordCount="8.0"/>
+              <ScoreDistribution value=">50K" recordCount="4.0"/>
+            </Node>
+            <Node id="1855" score=">50K" recordCount="24.0">
+              <SimplePredicate field="occupation" operator="equal" value="Tech-support"/>
+              <ScoreDistribution value="&lt;=50K" recordCount="10.0"/>
+              <ScoreDistribution value=">50K" recordCount="14.0"/>
+              <Node id="1856" score="&lt;=50K" recordCount="13.0">
+                <SimplePredicate field="age" operator="lessOrEqual" value="40.5"/>
+                <ScoreDistribution value="&lt;=50K" recordCount="9.0"/>
+                <ScoreDistribution value=">50K" recordCount="4.0"/>
+              </Node>
+              <Node id="1857" score=">50K" recordCount="11.0">
+                <SimplePredicate field="age" operator="greaterThan" value="40.5"/>
+                <ScoreDistribution value="&lt;=50K" recordCount="1.0"/>
+                <ScoreDistribution value=">50K" recordCount="10.0"/>
+              </Node>
+            </Node>
+            <Node id="1858" score="&lt;=50K" recordCount="15.0">
+              <SimplePredicate field="occupation" operator="equal" value="Protective-serv"/>
+              <ScoreDistribution value="&lt;=50K" recordCount="8.0"/>
+              <ScoreDistribution value=">50K" recordCount="7.0"/>
+            </Node>
+            <Node id="1859" score="&lt;=50K" recordCount="0.0">
+              <SimplePredicate field="occupation" operator="equal" value="Priv-house-serv"/>
+              <ScoreDistribution value="&lt;=50K" recordCount="0.0"/>
+              <ScoreDistribution value=">50K" recordCount="0.0"/>
+            </Node>
+            <Node id="1860" score="&lt;=50K" recordCount="0.0">
+              <SimplePredicate field="occupation" operator="equal" value="Armed-Forces"/>
+              <ScoreDistribution value="&lt;=50K" recordCount="0.0"/>
+              <ScoreDistribution value=">50K" recordCount="0.0"/>
+            </Node>
+          </Node>
+          <Node id="1861" score=">50K" recordCount="23.0">
+            <SimplePredicate field="capital-gain" operator="greaterThan" value="7032.5"/>
+            <ScoreDistribution value="&lt;=50K" recordCount="0.0"/>
+            <ScoreDistribution value=">50K" recordCount="23.0"/>
+          </Node>
+        </Node>
+        <Node id="1862" score="&lt;=50K" recordCount="198.0">
+          <SimplePredicate field="education" operator="equal" value="11th"/>
+          <ScoreDistribution value="&lt;=50K" recordCount="175.0"/>
+          <ScoreDistribution value=">50K" recordCount="23.0"/>
+        </Node>
+        <Node id="1894" score="&lt;=50K" recordCount="1487.0">
+          <SimplePredicate field="education" operator="equal" value="Some-college"/>
+          <ScoreDistribution value="&lt;=50K" recordCount="852.0"/>
+          <ScoreDistribution value=">50K" recordCount="635.0"/>
+          <Node id="2004" score="&lt;=50K" recordCount="1380.0">
+            <SimplePredicate field="capital-gain" operator="lessOrEqual" value="5095.5"/>
+            <ScoreDistribution value="&lt;=50K" recordCount="851.0"/>
+            <ScoreDistribution value=">50K" recordCount="529.0"/>
+            <Node id="2088" score="&lt;=50K" recordCount="84.0">
+              <SimplePredicate field="occupation" operator="equal" value="Adm-clerical"/>
+              <ScoreDistribution value="&lt;=50K" recordCount="55.0"/>
+              <ScoreDistribution value=">50K" recordCount="29.0"/>
+            </Node>
+            <Node id="2103" score=">50K" recordCount="234.0">
+              <SimplePredicate field="occupation" operator="equal" value="Exec-managerial"/>
+              <ScoreDistribution value="&lt;=50K" recordCount="114.0"/>
+              <ScoreDistribution value=">50K" recordCount="120.0"/>
+              <Node id="2114" score="&lt;=50K" recordCount="6.0">
+                <SimplePredicate field="workclass" operator="equal" value="State-gov"/>
+                <ScoreDistribution value="&lt;=50K" recordCount="4.0"/>
+                <ScoreDistribution value=">50K" recordCount="2.0"/>
+              </Node>
+              <Node id="2116" score="&lt;=50K" recordCount="29.0">
+                <SimplePredicate field="workclass" operator="equal" value="Self-emp-not-inc"/>
+                <ScoreDistribution value="&lt;=50K" recordCount="22.0"/>
+                <ScoreDistribution value=">50K" recordCount="7.0"/>
+              </Node>
+              <Node id="2121" score=">50K" recordCount="134.0">
+                <SimplePredicate field="workclass" operator="equal" value="Private"/>
+                <ScoreDistribution value="&lt;=50K" recordCount="63.0"/>
+                <ScoreDistribution value=">50K" recordCount="71.0"/>
+                <Node id="2126" score="&lt;=50K" recordCount="13.0">
+                  <SimplePredicate field="age" operator="lessOrEqual" value="30.0"/>
+                  <ScoreDistribution value="&lt;=50K" recordCount="10.0"/>
+                  <ScoreDistribution value=">50K" recordCount="3.0"/>
+                </Node>
+                <Node id="2127" score=">50K" recordCount="121.0">
+                  <SimplePredicate field="age" operator="greaterThan" value="30.0"/>
+                  <ScoreDistribution value="&lt;=50K" recordCount="53.0"/>
+                  <ScoreDistribution value=">50K" recordCount="68.0"/>
+                  <Node id="2134" score="&lt;=50K" recordCount="56.0">
+                    <SimplePredicate field="fnlwgt" operator="lessOrEqual" value="154345.0"/>
+                    <ScoreDistribution value="&lt;=50K" recordCount="30.0"/>
+                    <ScoreDistribution value=">50K" recordCount="26.0"/>
+                    <Node id="2144" score="&lt;=50K" recordCount="28.0">
+                      <SimplePredicate field="age" operator="lessOrEqual" value="42.5"/>
+                      <ScoreDistribution value="&lt;=50K" recordCount="18.0"/>
+                      <ScoreDistribution value=">50K" recordCount="10.0"/>
+                    </Node>
+                    <Node id="2147" score=">50K" recordCount="28.0">
+                      <SimplePredicate field="age" operator="greaterThan" value="42.5"/>
+                      <ScoreDistribution value="&lt;=50K" recordCount="12.0"/>
+                      <ScoreDistribution value=">50K" recordCount="16.0"/>
+                    </Node>
+                  </Node>
+                  <Node id="2151" score=">50K" recordCount="65.0">
+                    <SimplePredicate field="fnlwgt" operator="greaterThan" value="154345.0"/>
+                    <ScoreDistribution value="&lt;=50K" recordCount="23.0"/>
+                    <ScoreDistribution value=">50K" recordCount="42.0"/>
+                  </Node>
+                </Node>
+              </Node>
+              <Node id="2160" score=">50K" recordCount="12.0">
+                <SimplePredicate field="workclass" operator="equal" value="Federal-gov"/>
+                <ScoreDistribution value="&lt;=50K" recordCount="4.0"/>
+                <ScoreDistribution value=">50K" recordCount="8.0"/>
+              </Node>
+              <Node id="2161" score=">50K" recordCount="37.0">
+                <SimplePredicate field="workclass" operator="equal" value="Self-emp-inc"/>
+                <ScoreDistribution value="&lt;=50K" recordCount="13.0"/>
+                <ScoreDistribution value=">50K" recordCount="24.0"/>
+                <Node id="2162" score="&lt;=50K" recordCount="12.0">
+                  <SimplePredicate field="fnlwgt" operator="lessOrEqual" value="127295.5"/>
+                  <ScoreDistribution value="&lt;=50K" recordCount="8.0"/>
+                  <ScoreDistribution value=">50K" recordCount="4.0"/>
+                </Node>
+                <Node id="2163" score=">50K" recordCount="25.0">
+                  <SimplePredicate field="fnlwgt" operator="greaterThan" value="127295.5"/>
+                  <ScoreDistribution value="&lt;=50K" recordCount="5.0"/>
+                  <ScoreDistribution value=">50K" recordCount="20.0"/>
+                </Node>
+              </Node>
+              <Node id="2171" score="&lt;=50K" recordCount="16.0">
+                <SimplePredicate field="workclass" operator="equal" value="Local-gov"/>
+                <ScoreDistribution value="&lt;=50K" recordCount="8.0"/>
+                <ScoreDistribution value=">50K" recordCount="8.0"/>
+              </Node>
+              <Node id="2173" score="&lt;=50K" recordCount="0.0">
+                <SimplePredicate field="workclass" operator="equal" value="Without-pay"/>
+                <ScoreDistribution value="&lt;=50K" recordCount="0.0"/>
+                <ScoreDistribution value=">50K" recordCount="0.0"/>
+              </Node>
+              <Node id="2175" score="&lt;=50K" recordCount="0.0">
+                <SimplePredicate field="workclass" operator="equal" value="Never-worked"/>
+                <ScoreDistribution value="&lt;=50K" recordCount="0.0"/>
+                <ScoreDistribution value=">50K" recordCount="0.0"/>
+              </Node>
+            </Node>
+            <Node id="2195" score="&lt;=50K" recordCount="44.0">
+              <SimplePredicate field="occupation" operator="equal" value="Handlers-cleaners"/>
+              <ScoreDistribution value="&lt;=50K" recordCount="34.0"/>
+              <ScoreDistribution value=">50K" recordCount="10.0"/>
+            </Node>
+            <Node id="2215" score="&lt;=50K" recordCount="118.0">
+              <SimplePredicate field="occupation" operator="equal" value="Prof-specialty"/>
+              <ScoreDistribution value="&lt;=50K" recordCount="72.0"/>
+              <ScoreDistribution value=">50K" recordCount="46.0"/>
+              <Node id="2216" score="&lt;=50K" recordCount="29.0">
+                <SimplePredicate field="hours-per-week" operator="lessOrEqual" value="34.5"/>
+                <ScoreDistribution value="&lt;=50K" recordCount="26.0"/>
+                <ScoreDistribution value=">50K" recordCount="3.0"/>
+              </Node>
+              <Node id="2219" score="&lt;=50K" recordCount="89.0">
+                <SimplePredicate field="hours-per-week" operator="greaterThan" value="34.5"/>
+                <ScoreDistribution value="&lt;=50K" recordCount="46.0"/>
+                <ScoreDistribution value=">50K" recordCount="43.0"/>
+                <Node id="2222" score="&lt;=50K" recordCount="12.0">
+                  <SimplePredicate field="age" operator="lessOrEqual" value="32.5"/>
+                  <ScoreDistribution value="&lt;=50K" recordCount="11.0"/>
+                  <ScoreDistribution value=">50K" recordCount="1.0"/>
+                </Node>
+                <Node id="2223" score=">50K" recordCount="77.0">
+                  <SimplePredicate field="age" operator="greaterThan" value="32.5"/>
+                  <ScoreDistribution value="&lt;=50K" recordCount="35.0"/>
+                  <ScoreDistribution value=">50K" recordCount="42.0"/>
+                  <Node id="2224" score=">50K" recordCount="67.0">
+                    <SimplePredicate field="age" operator="lessOrEqual" value="58.5"/>
+                    <ScoreDistribution value="&lt;=50K" recordCount="27.0"/>
+                    <ScoreDistribution value=">50K" recordCount="40.0"/>
+                  </Node>
+                  <Node id="2238" score="&lt;=50K" recordCount="10.0">
+                    <SimplePredicate field="age" operator="greaterThan" value="58.5"/>
+                    <ScoreDistribution value="&lt;=50K" recordCount="8.0"/>
+                    <ScoreDistribution value=">50K" recordCount="2.0"/>
+                  </Node>
+                </Node>
+              </Node>
+            </Node>
+            <Node id="2239" score="&lt;=50K" recordCount="291.0">
+              <SimplePredicate field="occupation" operator="equal" value="Craft-repair"/>
+              <ScoreDistribution value="&lt;=50K" recordCount="179.0"/>
+              <ScoreDistribution value=">50K" recordCount="112.0"/>
+              <Node id="2262" score="&lt;=50K" recordCount="278.0">
+                <SimplePredicate field="capital-loss" operator="lessOrEqual" value="1794.0"/>
+                <ScoreDistribution value="&lt;=50K" recordCount="177.0"/>
+                <ScoreDistribution value=">50K" recordCount="101.0"/>
+                <Node id="2279" score="&lt;=50K" recordCount="153.0">
+                  <SimplePredicate field="fnlwgt" operator="lessOrEqual" value="187429.0"/>
+                  <ScoreDistribution value="&lt;=50K" recordCount="110.0"/>
+                  <ScoreDistribution value=">50K" recordCount="43.0"/>
+                </Node>
+                <Node id="2306" score="&lt;=50K" recordCount="125.0">
+                  <SimplePredicate field="fnlwgt" operator="greaterThan" value="187429.0"/>
+                  <ScoreDistribution value="&lt;=50K" recordCount="67.0"/>
+                  <ScoreDistribution value=">50K" recordCount="58.0"/>
+                  <Node id="2307" score="&lt;=50K" recordCount="97.0">
+                    <SimplePredicate field="hours-per-week" operator="lessOrEqual" value="46.5"/>
+                    <ScoreDistribution value="&lt;=50K" recordCount="59.0"/>
+                    <ScoreDistribution value=">50K" recordCount="38.0"/>
+                    <Node id="2308" score="&lt;=50K" recordCount="29.0">
+                      <SimplePredicate field="age" operator="lessOrEqual" value="34.5"/>
+                      <ScoreDistribution value="&lt;=50K" recordCount="22.0"/>
+                      <ScoreDistribution value=">50K" recordCount="7.0"/>
+                    </Node>
+                    <Node id="2311" score="&lt;=50K" recordCount="68.0">
+                      <SimplePredicate field="age" operator="greaterThan" value="34.5"/>
+                      <ScoreDistribution value="&lt;=50K" recordCount="37.0"/>
+                      <ScoreDistribution value=">50K" recordCount="31.0"/>
+                      <Node id="2312" score="&lt;=50K" recordCount="53.0">
+                        <SimplePredicate field="fnlwgt" operator="lessOrEqual" value="330811.5"/>
+                        <ScoreDistribution value="&lt;=50K" recordCount="33.0"/>
+                        <ScoreDistribution value=">50K" recordCount="20.0"/>
+                      </Node>
+                      <Node id="2319" score=">50K" recordCount="15.0">
+                        <SimplePredicate field="fnlwgt" operator="greaterThan" value="330811.5"/>
+                        <ScoreDistribution value="&lt;=50K" recordCount="4.0"/>
+                        <ScoreDistribution value=">50K" recordCount="11.0"/>
+                      </Node>
+                    </Node>
+                  </Node>
+                  <Node id="2320" score=">50K" recordCount="28.0">
+                    <SimplePredicate field="hours-per-week" operator="greaterThan" value="46.5"/>
+                    <ScoreDistribution value="&lt;=50K" recordCount="8.0"/>
+                    <ScoreDistribution value=">50K" recordCount="20.0"/>
+                  </Node>
+                </Node>
+              </Node>
+              <Node id="2323" score=">50K" recordCount="13.0">
+                <SimplePredicate field="capital-loss" operator="greaterThan" value="1794.0"/>
+                <ScoreDistribution value="&lt;=50K" recordCount="2.0"/>
+                <ScoreDistribution value=">50K" recordCount="11.0"/>
+              </Node>
+            </Node>
+            <Node id="2324" score="&lt;=50K" recordCount="60.0">
+              <SimplePredicate field="occupation" operator="equal" value="Farming-fishing"/>
+              <ScoreDistribution value="&lt;=50K" recordCount="55.0"/>
+              <ScoreDistribution value=">50K" recordCount="5.0"/>
+            </Node>
+            <Node id="2335" score="&lt;=50K" recordCount="82.0">
+              <SimplePredicate field="occupation" operator="equal" value="Machine-op-inspct"/>
+              <ScoreDistribution value="&lt;=50K" recordCount="68.0"/>
+              <ScoreDistribution value=">50K" recordCount="14.0"/>
+            </Node>
+            <Node id="2351" score="&lt;=50K" recordCount="193.0">
+              <SimplePredicate field="occupation" operator="equal" value="Sales"/>
+              <ScoreDistribution value="&lt;=50K" recordCount="103.0"/>
+              <ScoreDistribution value=">50K" recordCount="90.0"/>
+              <Node id="2352" score="&lt;=50K" recordCount="44.0">
+                <SimplePredicate field="age" operator="lessOrEqual" value="33.5"/>
+                <ScoreDistribution value="&lt;=50K" recordCount="36.0"/>
+                <ScoreDistribution value=">50K" recordCount="8.0"/>
+              </Node>
+              <Node id="2357" score=">50K" recordCount="149.0">
+                <SimplePredicate field="age" operator="greaterThan" value="33.5"/>
+                <ScoreDistribution value="&lt;=50K" recordCount="67.0"/>
+                <ScoreDistribution value=">50K" recordCount="82.0"/>
+                <Node id="2358" score=">50K" recordCount="139.0">
+                  <SimplePredicate field="capital-loss" operator="lessOrEqual" value="1794.0"/>
+                  <ScoreDistribution value="&lt;=50K" recordCount="67.0"/>
+                  <ScoreDistribution value=">50K" recordCount="72.0"/>
+                  <Node id="2359" score="&lt;=50K" recordCount="59.0">
+                    <SimplePredicate field="hours-per-week" operator="lessOrEqual" value="42.0"/>
+                    <ScoreDistribution value="&lt;=50K" recordCount="36.0"/>
+                    <ScoreDistribution value=">50K" recordCount="23.0"/>
+                  </Node>
+                  <Node id="2368" score=">50K" recordCount="80.0">
+                    <SimplePredicate field="hours-per-week" operator="greaterThan" value="42.0"/>
+                    <ScoreDistribution value="&lt;=50K" recordCount="31.0"/>
+                    <ScoreDistribution value=">50K" recordCount="49.0"/>
+                  </Node>
+                </Node>
+                <Node id="2385" score=">50K" recordCount="10.0">
+                  <SimplePredicate field="capital-loss" operator="greaterThan" value="1794.0"/>
+                  <ScoreDistribution value="&lt;=50K" recordCount="0.0"/>
+                  <ScoreDistribution value=">50K" recordCount="10.0"/>
+                </Node>
+              </Node>
+            </Node>
+            <Node id="2386" score="&lt;=50K" recordCount="67.0">
+              <SimplePredicate field="occupation" operator="equal" value="Other-service"/>
+              <ScoreDistribution value="&lt;=50K" recordCount="55.0"/>
+              <ScoreDistribution value=">50K" recordCount="12.0"/>
+            </Node>
+            <Node id="2395" score="&lt;=50K" recordCount="86.0">
+              <SimplePredicate field="occupation" operator="equal" value="Transport-moving"/>
+              <ScoreDistribution value="&lt;=50K" recordCount="61.0"/>
+              <ScoreDistribution value=">50K" recordCount="25.0"/>
+            </Node>
+            <Node id="2406" score=">50K" recordCount="56.0">
+              <SimplePredicate field="occupation" operator="equal" value="Tech-support"/>
+              <ScoreDistribution value="&lt;=50K" recordCount="24.0"/>
+              <ScoreDistribution value=">50K" recordCount="32.0"/>
+              <Node id="2407" score="&lt;=50K" recordCount="13.0">
+                <SimplePredicate field="age" operator="lessOrEqual" value="33.0"/>
+                <ScoreDistribution value="&lt;=50K" recordCount="9.0"/>
+                <ScoreDistribution value=">50K" recordCount="4.0"/>
+              </Node>
+              <Node id="2408" score=">50K" recordCount="43.0">
+                <SimplePredicate field="age" operator="greaterThan" value="33.0"/>
+                <ScoreDistribution value="&lt;=50K" recordCount="15.0"/>
+                <ScoreDistribution value=">50K" recordCount="28.0"/>
+              </Node>
+            </Node>
+            <Node id="2413" score=">50K" recordCount="65.0">
+              <SimplePredicate field="occupation" operator="equal" value="Protective-serv"/>
+              <ScoreDistribution value="&lt;=50K" recordCount="31.0"/>
+              <ScoreDistribution value=">50K" recordCount="34.0"/>
+            </Node>
+            <Node id="2426" score="&lt;=50K" recordCount="0.0">
+              <SimplePredicate field="occupation" operator="equal" value="Priv-house-serv"/>
+              <ScoreDistribution value="&lt;=50K" recordCount="0.0"/>
+              <ScoreDistribution value=">50K" recordCount="0.0"/>
+            </Node>
+            <Node id="2427" score="&lt;=50K" recordCount="0.0">
+              <SimplePredicate field="occupation" operator="equal" value="Armed-Forces"/>
+              <ScoreDistribution value="&lt;=50K" recordCount="0.0"/>
+              <ScoreDistribution value=">50K" recordCount="0.0"/>
+            </Node>
+          </Node>
+          <Node id="1994" score=">50K" recordCount="107.0">
+            <SimplePredicate field="capital-gain" operator="greaterThan" value="5095.5"/>
+            <ScoreDistribution value="&lt;=50K" recordCount="1.0"/>
+            <ScoreDistribution value=">50K" recordCount="106.0"/>
+          </Node>
+        </Node>
+        <Node id="1893" score=">50K" recordCount="218.0">
+          <SimplePredicate field="education" operator="equal" value="Prof-school"/>
+          <ScoreDistribution value="&lt;=50K" recordCount="32.0"/>
+          <ScoreDistribution value=">50K" recordCount="186.0"/>
+          <Node id="1895" score="&lt;=50K" recordCount="11.0">
+            <SimplePredicate field="hours-per-week" operator="lessOrEqual" value="27.0"/>
+            <ScoreDistribution value="&lt;=50K" recordCount="8.0"/>
+            <ScoreDistribution value=">50K" recordCount="3.0"/>
+          </Node>
+          <Node id="1896" score=">50K" recordCount="207.0">
+            <SimplePredicate field="hours-per-week" operator="greaterThan" value="27.0"/>
+            <ScoreDistribution value="&lt;=50K" recordCount="24.0"/>
+            <ScoreDistribution value=">50K" recordCount="183.0"/>
+          </Node>
+        </Node>
+        <Node id="1931" score="&lt;=50K" recordCount="79.0">
+          <SimplePredicate field="education" operator="equal" value="5th-6th"/>
+          <ScoreDistribution value="&lt;=50K" recordCount="72.0"/>
+          <ScoreDistribution value=">50K" recordCount="7.0"/>
+        </Node>
+        <Node id="1946" score=">50K" recordCount="168.0">
+          <SimplePredicate field="education" operator="equal" value="Doctorate"/>
+          <ScoreDistribution value="&lt;=50K" recordCount="26.0"/>
+          <ScoreDistribution value=">50K" recordCount="142.0"/>
+        </Node>
+        <Node id="1984" score="&lt;=50K" recordCount="191.0">
+          <SimplePredicate field="education" operator="equal" value="10th"/>
+          <ScoreDistribution value="&lt;=50K" recordCount="153.0"/>
+          <ScoreDistribution value=">50K" recordCount="38.0"/>
+        </Node>
+        <Node id="2015" score="&lt;=50K" recordCount="205.0">
+          <SimplePredicate field="education" operator="equal" value="7th-8th"/>
+          <ScoreDistribution value="&lt;=50K" recordCount="187.0"/>
+          <ScoreDistribution value=">50K" recordCount="18.0"/>
+        </Node>
+        <Node id="2087" score="&lt;=50K" recordCount="236.0">
+          <SimplePredicate field="education" operator="equal" value="Assoc-acdm"/>
+          <ScoreDistribution value="&lt;=50K" recordCount="122.0"/>
+          <ScoreDistribution value=">50K" recordCount="114.0"/>
+          <Node id="2104" score="&lt;=50K" recordCount="25.0">
+            <SimplePredicate field="occupation" operator="equal" value="Adm-clerical"/>
+            <ScoreDistribution value="&lt;=50K" recordCount="13.0"/>
+            <ScoreDistribution value=">50K" recordCount="12.0"/>
+            <Node id="2105" score="&lt;=50K" recordCount="15.0">
+              <SimplePredicate field="fnlwgt" operator="lessOrEqual" value="193242.0"/>
+              <ScoreDistribution value="&lt;=50K" recordCount="10.0"/>
+              <ScoreDistribution value=">50K" recordCount="5.0"/>
+            </Node>
+            <Node id="2106" score=">50K" recordCount="10.0">
+              <SimplePredicate field="fnlwgt" operator="greaterThan" value="193242.0"/>
+              <ScoreDistribution value="&lt;=50K" recordCount="3.0"/>
+              <ScoreDistribution value=">50K" recordCount="7.0"/>
+            </Node>
+          </Node>
+          <Node id="2107" score=">50K" recordCount="38.0">
+            <SimplePredicate field="occupation" operator="equal" value="Exec-managerial"/>
+            <ScoreDistribution value="&lt;=50K" recordCount="10.0"/>
+            <ScoreDistribution value=">50K" recordCount="28.0"/>
+          </Node>
+          <Node id="2112" score="&lt;=50K" recordCount="8.0">
+            <SimplePredicate field="occupation" operator="equal" value="Handlers-cleaners"/>
+            <ScoreDistribution value="&lt;=50K" recordCount="8.0"/>
+            <ScoreDistribution value=">50K" recordCount="0.0"/>
+          </Node>
+          <Node id="2113" score=">50K" recordCount="29.0">
+            <SimplePredicate field="occupation" operator="equal" value="Prof-specialty"/>
+            <ScoreDistribution value="&lt;=50K" recordCount="14.0"/>
+            <ScoreDistribution value=">50K" recordCount="15.0"/>
+            <Node id="2115" score="&lt;=50K" recordCount="11.0">
+              <SimplePredicate field="fnlwgt" operator="lessOrEqual" value="186774.0"/>
+              <ScoreDistribution value="&lt;=50K" recordCount="8.0"/>
+              <ScoreDistribution value=">50K" recordCount="3.0"/>
+            </Node>
+            <Node id="2117" score=">50K" recordCount="18.0">
+              <SimplePredicate field="fnlwgt" operator="greaterThan" value="186774.0"/>
+              <ScoreDistribution value="&lt;=50K" recordCount="6.0"/>
+              <ScoreDistribution value=">50K" recordCount="12.0"/>
+            </Node>
+          </Node>
+          <Node id="2118" score="&lt;=50K" recordCount="43.0">
+            <SimplePredicate field="occupation" operator="equal" value="Craft-repair"/>
+            <ScoreDistribution value="&lt;=50K" recordCount="25.0"/>
+            <ScoreDistribution value=">50K" recordCount="18.0"/>
+            <Node id="2122" score="&lt;=50K" recordCount="20.0">
+              <SimplePredicate field="age" operator="lessOrEqual" value="37.5"/>
+              <ScoreDistribution value="&lt;=50K" recordCount="16.0"/>
+              <ScoreDistribution value=">50K" recordCount="4.0"/>
+            </Node>
+            <Node id="2125" score=">50K" recordCount="23.0">
+              <SimplePredicate field="age" operator="greaterThan" value="37.5"/>
+              <ScoreDistribution value="&lt;=50K" recordCount="9.0"/>
+              <ScoreDistribution value=">50K" recordCount="14.0"/>
+              <Node id="2128" score="&lt;=50K" recordCount="10.0">
+                <SimplePredicate field="fnlwgt" operator="lessOrEqual" value="111317.0"/>
+                <ScoreDistribution value="&lt;=50K" recordCount="7.0"/>
+                <ScoreDistribution value=">50K" recordCount="3.0"/>
+              </Node>
+              <Node id="2129" score=">50K" recordCount="13.0">
+                <SimplePredicate field="fnlwgt" operator="greaterThan" value="111317.0"/>
+                <ScoreDistribution value="&lt;=50K" recordCount="2.0"/>
+                <ScoreDistribution value=">50K" recordCount="11.0"/>
+              </Node>
+            </Node>
+          </Node>
+          <Node id="2130" score="&lt;=50K" recordCount="5.0">
+            <SimplePredicate field="occupation" operator="equal" value="Farming-fishing"/>
+            <ScoreDistribution value="&lt;=50K" recordCount="4.0"/>
+            <ScoreDistribution value=">50K" recordCount="1.0"/>
+          </Node>
+          <Node id="2131" score=">50K" recordCount="10.0">
+            <SimplePredicate field="occupation" operator="equal" value="Machine-op-inspct"/>
+            <ScoreDistribution value="&lt;=50K" recordCount="3.0"/>
+            <ScoreDistribution value=">50K" recordCount="7.0"/>
+          </Node>
+          <Node id="2132" score=">50K" recordCount="36.0">
+            <SimplePredicate field="occupation" operator="equal" value="Sales"/>
+            <ScoreDistribution value="&lt;=50K" recordCount="17.0"/>
+            <ScoreDistribution value=">50K" recordCount="19.0"/>
+            <Node id="2133" score="&lt;=50K" recordCount="22.0">
+              <SimplePredicate field="age" operator="lessOrEqual" value="41.5"/>
+              <ScoreDistribution value="&lt;=50K" recordCount="14.0"/>
+              <ScoreDistribution value=">50K" recordCount="8.0"/>
+            </Node>
+            <Node id="2137" score=">50K" recordCount="14.0">
+              <SimplePredicate field="age" operator="greaterThan" value="41.5"/>
+              <ScoreDistribution value="&lt;=50K" recordCount="3.0"/>
+              <ScoreDistribution value=">50K" recordCount="11.0"/>
+            </Node>
+          </Node>
+          <Node id="2138" score="&lt;=50K" recordCount="6.0">
+            <SimplePredicate field="occupation" operator="equal" value="Other-service"/>
+            <ScoreDistribution value="&lt;=50K" recordCount="5.0"/>
+            <ScoreDistribution value=">50K" recordCount="1.0"/>
+          </Node>
+          <Node id="2139" score="&lt;=50K" recordCount="9.0">
+            <SimplePredicate field="occupation" operator="equal" value="Transport-moving"/>
+            <ScoreDistribution value="&lt;=50K" recordCount="9.0"/>
+            <ScoreDistribution value=">50K" recordCount="0.0"/>
+          </Node>
+          <Node id="2140" score=">50K" recordCount="19.0">
+            <SimplePredicate field="occupation" operator="equal" value="Tech-support"/>
+            <ScoreDistribution value="&lt;=50K" recordCount="9.0"/>
+            <ScoreDistribution value=">50K" recordCount="10.0"/>
+          </Node>
+          <Node id="2141" score="&lt;=50K" recordCount="8.0">
+            <SimplePredicate field="occupation" operator="equal" value="Protective-serv"/>
+            <ScoreDistribution value="&lt;=50K" recordCount="5.0"/>
+            <ScoreDistribution value=">50K" recordCount="3.0"/>
+          </Node>
+          <Node id="2142" score="&lt;=50K" recordCount="0.0">
+            <SimplePredicate field="occupation" operator="equal" value="Priv-house-serv"/>
+            <ScoreDistribution value="&lt;=50K" recordCount="0.0"/>
+            <ScoreDistribution value=">50K" recordCount="0.0"/>
+          </Node>
+          <Node id="2143" score="&lt;=50K" recordCount="0.0">
+            <SimplePredicate field="occupation" operator="equal" value="Armed-Forces"/>
+            <ScoreDistribution value="&lt;=50K" recordCount="0.0"/>
+            <ScoreDistribution value=">50K" recordCount="0.0"/>
+          </Node>
+        </Node>
+        <Node id="2149" score="&lt;=50K" recordCount="44.0">
+          <SimplePredicate field="education" operator="equal" value="1st-4th"/>
+          <ScoreDistribution value="&lt;=50K" recordCount="41.0"/>
+          <ScoreDistribution value=">50K" recordCount="3.0"/>
+        </Node>
+        <Node id="2220" score="&lt;=50K" recordCount="11.0">
+          <SimplePredicate field="education" operator="equal" value="Preschool"/>
+          <ScoreDistribution value="&lt;=50K" recordCount="11.0"/>
+          <ScoreDistribution value=">50K" recordCount="0.0"/>
+        </Node>
+        <Node id="2221" score="&lt;=50K" recordCount="111.0">
+          <SimplePredicate field="education" operator="equal" value="9th"/>
+          <ScoreDistribution value="&lt;=50K" recordCount="101.0"/>
+          <ScoreDistribution value=">50K" recordCount="10.0"/>
+        </Node>
+        <Node id="2261" score="&lt;=50K" recordCount="61.0">
+          <SimplePredicate field="education" operator="equal" value="12th"/>
+          <ScoreDistribution value="&lt;=50K" recordCount="48.0"/>
+          <ScoreDistribution value=">50K" recordCount="13.0"/>
+        </Node>
+      </Node>
+      <Node id="4" score="&lt;=50K" recordCount="3064.0">
+        <SimplePredicate field="relationship" operator="equal" value="Own-child"/>
+        <ScoreDistribution value="&lt;=50K" recordCount="3018.0"/>
+        <ScoreDistribution value=">50K" recordCount="46.0"/>
+        <Node id="6" score="&lt;=50K" recordCount="3045.0">
+          <SimplePredicate field="capital-gain" operator="lessOrEqual" value="4718.5"/>
+          <ScoreDistribution value="&lt;=50K" recordCount="3013.0"/>
+          <ScoreDistribution value=">50K" recordCount="32.0"/>
+        </Node>
+        <Node id="162" score=">50K" recordCount="19.0">
+          <SimplePredicate field="capital-gain" operator="greaterThan" value="4718.5"/>
+          <ScoreDistribution value="&lt;=50K" recordCount="5.0"/>
+          <ScoreDistribution value=">50K" recordCount="14.0"/>
+        </Node>
+      </Node>
+      <Node id="3" score="&lt;=50K" recordCount="2046.0">
+        <SimplePredicate field="relationship" operator="equal" value="Unmarried"/>
+        <ScoreDistribution value="&lt;=50K" recordCount="1923.0"/>
+        <ScoreDistribution value=">50K" recordCount="123.0"/>
+        <Node id="5" score="&lt;=50K" recordCount="2015.0">
+          <SimplePredicate field="capital-gain" operator="lessOrEqual" value="7139.5"/>
+          <ScoreDistribution value="&lt;=50K" recordCount="1920.0"/>
+          <ScoreDistribution value=">50K" recordCount="95.0"/>
+        </Node>
+        <Node id="771" score=">50K" recordCount="31.0">
+          <SimplePredicate field="capital-gain" operator="greaterThan" value="7139.5"/>
+          <ScoreDistribution value="&lt;=50K" recordCount="3.0"/>
+          <ScoreDistribution value=">50K" recordCount="28.0"/>
+        </Node>
+      </Node>
+      <Node id="783" score="&lt;=50K" recordCount="919.0">
+        <SimplePredicate field="relationship" operator="equal" value="Wife"/>
+        <ScoreDistribution value="&lt;=50K" recordCount="485.0"/>
+        <ScoreDistribution value=">50K" recordCount="434.0"/>
+        <Node id="902" score=">50K" recordCount="170.0">
+          <SimplePredicate field="education" operator="equal" value="Bachelors"/>
+          <ScoreDistribution value="&lt;=50K" recordCount="56.0"/>
+          <ScoreDistribution value=">50K" recordCount="114.0"/>
+        </Node>
+        <Node id="1052" score="&lt;=50K" recordCount="301.0">
+          <SimplePredicate field="education" operator="equal" value="HS-grad"/>
+          <ScoreDistribution value="&lt;=50K" recordCount="194.0"/>
+          <ScoreDistribution value=">50K" recordCount="107.0"/>
+          <Node id="1054" score=">50K" recordCount="96.0">
+            <SimplePredicate field="occupation" operator="equal" value="Adm-clerical"/>
+            <ScoreDistribution value="&lt;=50K" recordCount="46.0"/>
+            <ScoreDistribution value=">50K" recordCount="50.0"/>
+            <Node id="1055" score="&lt;=50K" recordCount="17.0">
+              <SimplePredicate field="age" operator="lessOrEqual" value="29.5"/>
+              <ScoreDistribution value="&lt;=50K" recordCount="13.0"/>
+              <ScoreDistribution value=">50K" recordCount="4.0"/>
+            </Node>
+            <Node id="1056" score=">50K" recordCount="79.0">
+              <SimplePredicate field="age" operator="greaterThan" value="29.5"/>
+              <ScoreDistribution value="&lt;=50K" recordCount="33.0"/>
+              <ScoreDistribution value=">50K" recordCount="46.0"/>
+            </Node>
+          </Node>
+          <Node id="1067" score=">50K" recordCount="35.0">
+            <SimplePredicate field="occupation" operator="equal" value="Exec-managerial"/>
+            <ScoreDistribution value="&lt;=50K" recordCount="16.0"/>
+            <ScoreDistribution value=">50K" recordCount="19.0"/>
+            <Node id="1068" score="&lt;=50K" recordCount="12.0">
+              <SimplePredicate field="age" operator="lessOrEqual" value="37.0"/>
+              <ScoreDistribution value="&lt;=50K" recordCount="10.0"/>
+              <ScoreDistribution value=">50K" recordCount="2.0"/>
+            </Node>
+            <Node id="1069" score=">50K" recordCount="23.0">
+              <SimplePredicate field="age" operator="greaterThan" value="37.0"/>
+              <ScoreDistribution value="&lt;=50K" recordCount="6.0"/>
+              <ScoreDistribution value=">50K" recordCount="17.0"/>
+            </Node>
+          </Node>
+          <Node id="1072" score="&lt;=50K" recordCount="6.0">
+            <SimplePredicate field="occupation" operator="equal" value="Handlers-cleaners"/>
+            <ScoreDistribution value="&lt;=50K" recordCount="5.0"/>
+            <ScoreDistribution value=">50K" recordCount="1.0"/>
+          </Node>
+          <Node id="1073" score="&lt;=50K" recordCount="31.0">
+            <SimplePredicate field="occupation" operator="equal" value="Prof-specialty"/>
+            <ScoreDistribution value="&lt;=50K" recordCount="24.0"/>
+            <ScoreDistribution value=">50K" recordCount="7.0"/>
+          </Node>
+          <Node id="1079" score="&lt;=50K" recordCount="6.0">
+            <SimplePredicate field="occupation" operator="equal" value="Craft-repair"/>
+            <ScoreDistribution value="&lt;=50K" recordCount="3.0"/>
+            <ScoreDistribution value=">50K" recordCount="3.0"/>
+          </Node>
+          <Node id="1080" score="&lt;=50K" recordCount="3.0">
+            <SimplePredicate field="occupation" operator="equal" value="Farming-fishing"/>
+            <ScoreDistribution value="&lt;=50K" recordCount="3.0"/>
+            <ScoreDistribution value=">50K" recordCount="0.0"/>
+          </Node>
+          <Node id="1081" score="&lt;=50K" recordCount="27.0">
+            <SimplePredicate field="occupation" operator="equal" value="Machine-op-inspct"/>
+            <ScoreDistribution value="&lt;=50K" recordCount="21.0"/>
+            <ScoreDistribution value=">50K" recordCount="6.0"/>
+          </Node>
+          <Node id="1086" score="&lt;=50K" recordCount="38.0">
+            <SimplePredicate field="occupation" operator="equal" value="Sales"/>
+            <ScoreDistribution value="&lt;=50K" recordCount="30.0"/>
+            <ScoreDistribution value=">50K" recordCount="8.0"/>
+          </Node>
+          <Node id="1091" score="&lt;=50K" recordCount="42.0">
+            <SimplePredicate field="occupation" operator="equal" value="Other-service"/>
+            <ScoreDistribution value="&lt;=50K" recordCount="32.0"/>
+            <ScoreDistribution value=">50K" recordCount="10.0"/>
+          </Node>
+          <Node id="1104" score="&lt;=50K" recordCount="5.0">
+            <SimplePredicate field="occupation" operator="equal" value="Transport-moving"/>
+            <ScoreDistribution value="&lt;=50K" recordCount="4.0"/>
+            <ScoreDistribution value=">50K" recordCount="1.0"/>
+          </Node>
+          <Node id="1105" score="&lt;=50K" recordCount="5.0">
+            <SimplePredicate field="occupation" operator="equal" value="Tech-support"/>
+            <ScoreDistribution value="&lt;=50K" recordCount="3.0"/>
+            <ScoreDistribution value=">50K" recordCount="2.0"/>
+          </Node>
+          <Node id="1106" score="&lt;=50K" recordCount="2.0">
+            <SimplePredicate field="occupation" operator="equal" value="Protective-serv"/>
+            <ScoreDistribution value="&lt;=50K" recordCount="2.0"/>
+            <ScoreDistribution value=">50K" recordCount="0.0"/>
+          </Node>
+          <Node id="1107" score="&lt;=50K" recordCount="5.0">
+            <SimplePredicate field="occupation" operator="equal" value="Priv-house-serv"/>
+            <ScoreDistribution value="&lt;=50K" recordCount="5.0"/>
+            <ScoreDistribution value=">50K" recordCount="0.0"/>
+          </Node>
+          <Node id="1108" score="&lt;=50K" recordCount="0.0">
+            <SimplePredicate field="occupation" operator="equal" value="Armed-Forces"/>
+            <ScoreDistribution value="&lt;=50K" recordCount="0.0"/>
+            <ScoreDistribution value=">50K" recordCount="0.0"/>
+          </Node>
+        </Node>
+        <Node id="1116" score=">50K" recordCount="60.0">
+          <SimplePredicate field="education" operator="equal" value="Masters"/>
+          <ScoreDistribution value="&lt;=50K" recordCount="15.0"/>
+          <ScoreDistribution value=">50K" recordCount="45.0"/>
+        </Node>
+        <Node id="1140" score=">50K" recordCount="57.0">
+          <SimplePredicate field="education" operator="equal" value="Assoc-voc"/>
+          <ScoreDistribution value="&lt;=50K" recordCount="23.0"/>
+          <ScoreDistribution value=">50K" recordCount="34.0"/>
+          <Node id="1151" score="&lt;=50K" recordCount="18.0">
+            <SimplePredicate field="age" operator="lessOrEqual" value="31.5"/>
+            <ScoreDistribution value="&lt;=50K" recordCount="13.0"/>
+            <ScoreDistribution value=">50K" recordCount="5.0"/>
+          </Node>
+          <Node id="1152" score=">50K" recordCount="39.0">
+            <SimplePredicate field="age" operator="greaterThan" value="31.5"/>
+            <ScoreDistribution value="&lt;=50K" recordCount="10.0"/>
+            <ScoreDistribution value=">50K" recordCount="29.0"/>
+          </Node>
+        </Node>
+        <Node id="1164" score="&lt;=50K" recordCount="16.0">
+          <SimplePredicate field="education" operator="equal" value="11th"/>
+          <ScoreDistribution value="&lt;=50K" recordCount="14.0"/>
+          <ScoreDistribution value=">50K" recordCount="2.0"/>
+        </Node>
+        <Node id="1165" score="&lt;=50K" recordCount="183.0">
+          <SimplePredicate field="education" operator="equal" value="Some-college"/>
+          <ScoreDistribution value="&lt;=50K" recordCount="95.0"/>
+          <ScoreDistribution value=">50K" recordCount="88.0"/>
+          <Node id="1175" score=">50K" recordCount="57.0">
+            <SimplePredicate field="occupation" operator="equal" value="Adm-clerical"/>
+            <ScoreDistribution value="&lt;=50K" recordCount="25.0"/>
+            <ScoreDistribution value=">50K" recordCount="32.0"/>
+            <Node id="1181" score="&lt;=50K" recordCount="37.0">
+              <SimplePredicate field="fnlwgt" operator="lessOrEqual" value="217565.5"/>
+              <ScoreDistribution value="&lt;=50K" recordCount="19.0"/>
+              <ScoreDistribution value=">50K" recordCount="18.0"/>
+              <Node id="1184" score="&lt;=50K" recordCount="15.0">
+                <SimplePredicate field="age" operator="lessOrEqual" value="42.5"/>
+                <ScoreDistribution value="&lt;=50K" recordCount="12.0"/>
+                <ScoreDistribution value=">50K" recordCount="3.0"/>
+              </Node>
+              <Node id="1185" score=">50K" recordCount="22.0">
+                <SimplePredicate field="age" operator="greaterThan" value="42.5"/>
+                <ScoreDistribution value="&lt;=50K" recordCount="7.0"/>
+                <ScoreDistribution value=">50K" recordCount="15.0"/>
+              </Node>
+            </Node>
+            <Node id="1188" score=">50K" recordCount="20.0">
+              <SimplePredicate field="fnlwgt" operator="greaterThan" value="217565.5"/>
+              <ScoreDistribution value="&lt;=50K" recordCount="6.0"/>
+              <ScoreDistribution value=">50K" recordCount="14.0"/>
+            </Node>
+          </Node>
+          <Node id="1191" score=">50K" recordCount="35.0">
+            <SimplePredicate field="occupation" operator="equal" value="Exec-managerial"/>
+            <ScoreDistribution value="&lt;=50K" recordCount="17.0"/>
+            <ScoreDistribution value=">50K" recordCount="18.0"/>
+            <Node id="1192" score="&lt;=50K" recordCount="11.0">
+              <SimplePredicate field="age" operator="lessOrEqual" value="31.5"/>
+              <ScoreDistribution value="&lt;=50K" recordCount="9.0"/>
+              <ScoreDistribution value=">50K" recordCount="2.0"/>
+            </Node>
+            <Node id="1193" score=">50K" recordCount="24.0">
+              <SimplePredicate field="age" operator="greaterThan" value="31.5"/>
+              <ScoreDistribution value="&lt;=50K" recordCount="8.0"/>
+              <ScoreDistribution value=">50K" recordCount="16.0"/>
+            </Node>
+          </Node>
+          <Node id="1196" score="&lt;=50K" recordCount="1.0">
+            <SimplePredicate field="occupation" operator="equal" value="Handlers-cleaners"/>
+            <ScoreDistribution value="&lt;=50K" recordCount="1.0"/>
+            <ScoreDistribution value=">50K" recordCount="0.0"/>
+          </Node>
+          <Node id="1197" score=">50K" recordCount="31.0">
+            <SimplePredicate field="occupation" operator="equal" value="Prof-specialty"/>
+            <ScoreDistribution value="&lt;=50K" recordCount="15.0"/>
+            <ScoreDistribution value=">50K" recordCount="16.0"/>
+            <Node id="1198" score="&lt;=50K" recordCount="13.0">
+              <SimplePredicate field="hours-per-week" operator="lessOrEqual" value="38.0"/>
+              <ScoreDistribution value="&lt;=50K" recordCount="9.0"/>
+              <ScoreDistribution value=">50K" recordCount="4.0"/>
+            </Node>
+            <Node id="1199" score=">50K" recordCount="18.0">
+              <SimplePredicate field="hours-per-week" operator="greaterThan" value="38.0"/>
+              <ScoreDistribution value="&lt;=50K" recordCount="6.0"/>
+              <ScoreDistribution value=">50K" recordCount="12.0"/>
+            </Node>
+          </Node>
+          <Node id="1200" score="&lt;=50K" recordCount="2.0">
+            <SimplePredicate field="occupation" operator="equal" value="Craft-repair"/>
+            <ScoreDistribution value="&lt;=50K" recordCount="2.0"/>
+            <ScoreDistribution value=">50K" recordCount="0.0"/>
+          </Node>
+          <Node id="1201" score="&lt;=50K" recordCount="1.0">
+            <SimplePredicate field="occupation" operator="equal" value="Farming-fishing"/>
+            <ScoreDistribution value="&lt;=50K" recordCount="1.0"/>
+            <ScoreDistribution value=">50K" recordCount="0.0"/>
+          </Node>
+          <Node id="1202" score="&lt;=50K" recordCount="4.0">
+            <SimplePredicate field="occupation" operator="equal" value="Machine-op-inspct"/>
+            <ScoreDistribution value="&lt;=50K" recordCount="2.0"/>
+            <ScoreDistribution value=">50K" recordCount="2.0"/>
+          </Node>
+          <Node id="1203" score=">50K" recordCount="19.0">
+            <SimplePredicate field="occupation" operator="equal" value="Sales"/>
+            <ScoreDistribution value="&lt;=50K" recordCount="9.0"/>
+            <ScoreDistribution value=">50K" recordCount="10.0"/>
+          </Node>
+          <Node id="1204" score="&lt;=50K" recordCount="24.0">
+            <SimplePredicate field="occupation" operator="equal" value="Other-service"/>
+            <ScoreDistribution value="&lt;=50K" recordCount="19.0"/>
+            <ScoreDistribution value=">50K" recordCount="5.0"/>
+          </Node>
+          <Node id="1207" score="&lt;=50K" recordCount="3.0">
+            <SimplePredicate field="occupation" operator="equal" value="Transport-moving"/>
+            <ScoreDistribution value="&lt;=50K" recordCount="2.0"/>
+            <ScoreDistribution value=">50K" recordCount="1.0"/>
+          </Node>
+          <Node id="1208" score=">50K" recordCount="4.0">
+            <SimplePredicate field="occupation" operator="equal" value="Tech-support"/>
+            <ScoreDistribution value="&lt;=50K" recordCount="1.0"/>
+            <ScoreDistribution value=">50K" recordCount="3.0"/>
+          </Node>
+          <Node id="1209" score=">50K" recordCount="1.0">
+            <SimplePredicate field="occupation" operator="equal" value="Protective-serv"/>
+            <ScoreDistribution value="&lt;=50K" recordCount="0.0"/>
+            <ScoreDistribution value=">50K" recordCount="1.0"/>
+          </Node>
+          <Node id="1210" score="&lt;=50K" recordCount="1.0">
+            <SimplePredicate field="occupation" operator="equal" value="Priv-house-serv"/>
+            <ScoreDistribution value="&lt;=50K" recordCount="1.0"/>
+            <ScoreDistribution value=">50K" recordCount="0.0"/>
+          </Node>
+          <Node id="1211" score="&lt;=50K" recordCount="0.0">
+            <SimplePredicate field="occupation" operator="equal" value="Armed-Forces"/>
+            <ScoreDistribution value="&lt;=50K" recordCount="0.0"/>
+            <ScoreDistribution value=">50K" recordCount="0.0"/>
+          </Node>
+        </Node>
+        <Node id="1212" score=">50K" recordCount="17.0">
+          <SimplePredicate field="education" operator="equal" value="Prof-school"/>
+          <ScoreDistribution value="&lt;=50K" recordCount="2.0"/>
+          <ScoreDistribution value=">50K" recordCount="15.0"/>
+        </Node>
+        <Node id="1213" score="&lt;=50K" recordCount="6.0">
+          <SimplePredicate field="education" operator="equal" value="5th-6th"/>
+          <ScoreDistribution value="&lt;=50K" recordCount="6.0"/>
+          <ScoreDistribution value=">50K" recordCount="0.0"/>
+        </Node>
+        <Node id="1214" score=">50K" recordCount="10.0">
+          <SimplePredicate field="education" operator="equal" value="Doctorate"/>
+          <ScoreDistribution value="&lt;=50K" recordCount="3.0"/>
+          <ScoreDistribution value=">50K" recordCount="7.0"/>
+        </Node>
+        <Node id="1215" score="&lt;=50K" recordCount="21.0">
+          <SimplePredicate field="education" operator="equal" value="10th"/>
+          <ScoreDistribution value="&lt;=50K" recordCount="19.0"/>
+          <ScoreDistribution value=">50K" recordCount="2.0"/>
+        </Node>
+        <Node id="1219" score="&lt;=50K" recordCount="11.0">
+          <SimplePredicate field="education" operator="equal" value="7th-8th"/>
+          <ScoreDistribution value="&lt;=50K" recordCount="11.0"/>
+          <ScoreDistribution value=">50K" recordCount="0.0"/>
+        </Node>
+        <Node id="1220" score="&lt;=50K" recordCount="45.0">
+          <SimplePredicate field="education" operator="equal" value="Assoc-acdm"/>
+          <ScoreDistribution value="&lt;=50K" recordCount="27.0"/>
+          <ScoreDistribution value=">50K" recordCount="18.0"/>
+        </Node>
+        <Node id="1239" score="&lt;=50K" recordCount="3.0">
+          <SimplePredicate field="education" operator="equal" value="1st-4th"/>
+          <ScoreDistribution value="&lt;=50K" recordCount="3.0"/>
+          <ScoreDistribution value=">50K" recordCount="0.0"/>
+        </Node>
+        <Node id="1240" score="&lt;=50K" recordCount="1.0">
+          <SimplePredicate field="education" operator="equal" value="Preschool"/>
+          <ScoreDistribution value="&lt;=50K" recordCount="1.0"/>
+          <ScoreDistribution value=">50K" recordCount="0.0"/>
+        </Node>
+        <Node id="1241" score="&lt;=50K" recordCount="11.0">
+          <SimplePredicate field="education" operator="equal" value="9th"/>
+          <ScoreDistribution value="&lt;=50K" recordCount="11.0"/>
+          <ScoreDistribution value=">50K" recordCount="0.0"/>
+        </Node>
+        <Node id="1242" score="&lt;=50K" recordCount="7.0">
+          <SimplePredicate field="education" operator="equal" value="12th"/>
+          <ScoreDistribution value="&lt;=50K" recordCount="5.0"/>
+          <ScoreDistribution value=">50K" recordCount="2.0"/>
+        </Node>
+      </Node>
+      <Node id="1243" score="&lt;=50K" recordCount="591.0">
+        <SimplePredicate field="relationship" operator="equal" value="Other-relative"/>
+        <ScoreDistribution value="&lt;=50K" recordCount="570.0"/>
+        <ScoreDistribution value=">50K" recordCount="21.0"/>
+      </Node>
+    </Node>
+  </TreeModel>
+</PMML>
